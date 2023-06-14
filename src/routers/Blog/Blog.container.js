@@ -7,7 +7,7 @@ export class BlogContainer extends PureComponent {
     super(props);
 
     this.state = {
-      dis:[],
+      dis: [],
       blogs: [],
       currentPage: 1,
       postPerPage: 3,
@@ -98,6 +98,7 @@ export class BlogContainer extends PureComponent {
           });
         }
         this.rendering();
+        alert("Blog Updated Successfully");
       })
       .catch(e => {
         console.log(e.msg);
@@ -106,7 +107,7 @@ export class BlogContainer extends PureComponent {
   handleExit = () => {
     this.setState({
       edit: false,
-      display:false,
+      display: false,
     });
   };
   handleDelete = id => {
@@ -114,7 +115,11 @@ export class BlogContainer extends PureComponent {
     fetch("http://localhost:4010/Blogs/" + id, {
       method: "delete",
     })
-      .then(res => this.rendering())
+      .then(res => {
+        this.rendering();
+        alert("Successfully Deleted");
+      })
+
       .catch(rej => console.log(rej));
   };
   handleDisplay = id => {
@@ -124,7 +129,7 @@ export class BlogContainer extends PureComponent {
       .then(res => res.json())
       .then(res => {
         console.log(res);
-        this.setState({ dis:res, display: true });
+        this.setState({ dis: res, display: true });
 
         // <ViewMoreContainer {...this.state} />;
         // this.rendering();

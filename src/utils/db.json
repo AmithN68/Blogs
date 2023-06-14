@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "blogName": "Food",
+      "bloggerName": "Amith",
+      "blogDetail": "Foodie Blogger\n",
+      "id": 1
+    },
+    {
+      "blogName": "Food",
+      "bloggerName": "Chandu",
+      "blogDetail": "Foodie Blogger in Bangalore",
+      "id": 2
+    },
+    {
+      "blogName": "Shopping",
+      "bloggerName": "Charan",
+      "blogDetail": "Shopping Blogger",
+      "id": 3
+    },
+    {
+      "blogName": "Shopping",
+      "bloggerName": "Anarghya",
+      "blogDetail": "A Shopping cart with items",
+      "id": 4
+    },
+    {
+      "blogName": "Food",
+      "bloggerName": "AmithChandru",
+      "blogDetail": "A food blogger with no food",
+      "id": 5
+    }
+  ]
+}

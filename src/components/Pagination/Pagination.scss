@@ -1,0 +1,31 @@
+.pagination{
+    // background-color: grey;
+    height: 5vh;
+    width: 10%;
+    margin: 0 auto;
+    margin-top: 6rem;
+    .active{
+        padding: 0.25rem 0.35rem;
+        margin: 0rem 1rem;
+        background-color: grey;
+        border: 0.1rem solid transparent;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 0.3rem;
+        font-weight: 500;
+    }:hover,:focus{
+        background-color: rgb(4, 255, 234);
+        border: 0.1rem solid grey;
+        color: rgb(0, 0, 0);
+    }
+    .page{
+        padding: 0.25rem 0.35rem;
+        margin: 0rem 1rem;
+        background-color: grey;
+        border: 0.2rem solid transparent;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 0.3rem;
+        font-weight: 500;
+    }
+}

@@ -1,6 +1,5 @@
 @import "./mixin";
 @import "./var";
-@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
 
 .mainBlock {
   width: 100%;
@@ -13,7 +12,6 @@
     div {
       @include flexProp(none);
       flex-direction: column;
-      //   padding-top: rem;
       img {
         width: 9rem;
         height: 9rem;
@@ -44,7 +42,6 @@
     font-size: 3rem;
     font-weight: 600;
     width: 80%;
-    // background-color: rgb(192, 198, 198);
     .homeBlock {
       margin-top: 2rem;
       .input11 {

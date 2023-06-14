@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
 import searchBlog from "../../images/icons8-search.svg";
 // import "BlogPage" from "../../routers/Blog/Blog.container";
 
-export class HomeComponent extends Component {
+export class HomeComponent extends PureComponent {
   render() {
-    const { blogs, searchValue, handleSearch, filteredBlogs, filteredBlog } =
+    const { blogs } =
       this.props;
     return (
       <div className="mainBlock">

@@ -75,7 +75,6 @@ export class BlogContainer extends PureComponent {
   };
 
   UpdateData(id) {
-    // console.log(id);
     const data = {
       blogName: this.state.blogName,
       bloggerName: this.state.bloggerName,
@@ -87,9 +86,7 @@ export class BlogContainer extends PureComponent {
       body: JSON.stringify(data),
     })
       .then(res => {
-        // console.log(res);
         if (res.status === 200) {
-          // console.log(res.status === 200);
           this.setState({
             blogName: "",
             bloggerName: "",
@@ -130,9 +127,6 @@ export class BlogContainer extends PureComponent {
       .then(res => {
         console.log(res);
         this.setState({ dis: res, display: true });
-
-        // <ViewMoreContainer {...this.state} />;
-        // this.rendering();
       })
       .catch(rej => console.log(rej));
   };

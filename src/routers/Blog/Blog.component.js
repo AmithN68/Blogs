@@ -23,7 +23,6 @@ export class BlogComponent extends PureComponent {
       handleChange,
       handleExit,
       edit,
-      id,
     } = this.props;
     console.log(dis);
     const lastPost = currentPage * postPerPage;
@@ -62,7 +61,6 @@ export class BlogComponent extends PureComponent {
                     }}
                   >
                     ViewMore
-                    {/* <Link to="/viewMore">View More</Link> */}
                   </button>
                   <button
                     className="delete"

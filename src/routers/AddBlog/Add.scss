@@ -29,11 +29,12 @@
       img {
         color: white;
       }
+      &:hover {
+        color: #838080;
+        background-color: rgb(226, 226, 226);
+      }
     }
-    .home:hover {
-      color: #838080;
-      background-color: rgb(226, 226, 226);
-    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -43,6 +44,13 @@
       textarea {
         padding: 0.4rem 0.4rem;
         width: 90%;
+        border-radius: 0.3rem;
+        border: 0.2rem solid transparent;
+        &:hover,
+        &:focus {
+          border: 0.2rem solid #949292;
+          outline: none;
+        }
       }
       label {
         width: 90%;
@@ -52,21 +60,7 @@
         font-size: 1rem;
         font-weight: 400;
       }
-      input,
-      textarea {
-        border-radius: 0.3rem;
-        border: 0.2rem solid transparent;
-      }
-      input:hover,
-      input:focus {
-        border: 0.2rem solid #949292;
-        outline: none;
-      }
-      textarea:hover,
-      textarea:focus {
-        border: 0.2rem solid #949292;
-        outline: none;
-      }
+
       button {
         padding: 0.6rem 2.6rem;
         margin-top: 2rem;
@@ -75,12 +69,12 @@
         font-size: 1rem;
         font-weight: 600;
         letter-spacing: 0.1rem;
-      }
-      button:hover {
-        border: 0.2rem solid transparent;
-        background-color: #000;
-        border-radius: 0.4rem;
-        color: white;
+        &:hover {
+          border: 0.2rem solid transparent;
+          background-color: #000;
+          border-radius: 0.4rem;
+          color: white;
+        }
       }
     }
   }

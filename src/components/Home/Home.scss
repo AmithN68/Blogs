@@ -30,10 +30,10 @@
           color: white;
           text-decoration: none;
         }
-      }
-      h2:hover {
+        &:hover{
         border-bottom: 0.2rem solid rgb(4, 253, 41);
         cursor: pointer;
+      }
       }
     }
   }
@@ -54,12 +54,13 @@
           border: 0.2rem solid transparent;
           outline: none;
           border-radius: 0.4rem;
+          &:focus,
+          &:hover {
+            border: 0.2rem solid $dark3;
+            outline: none;
+          }
         }
-        input:focus,
-        input:hover {
-          border: 0.2rem solid $dark3;
-          outline: none;
-        }
+
         .search {
           position: absolute;
           top: 1.7rem;

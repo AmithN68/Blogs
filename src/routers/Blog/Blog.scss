@@ -1,5 +1,5 @@
-@import "mixin";
-@import "var";
+@import "../../Sass/mixin";
+@import "../../Sass/var";
 .blogBlock {
   width: 100%;
   height: 100vh;
@@ -222,4 +222,235 @@
     height: 1.6rem;
     padding: 0.1rem;
   }
+}
+
+
+
+
+
+// !media queries
+@media screen and (max-width:475px) {
+.blogBlock {
+  width: 100%;
+  height: 100vh;
+  .homeBtn {
+    padding: 0.2rem 0.6rem;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    border: 0.2rem solid rgb(5, 5, 5);
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgb(178, 178, 178);
+    }
+    &:hover {
+      border-radius: 0.4rem;
+      border: 0.2rem solid transparent;
+      background-color: rgb(150, 149, 149);
+    }
+    &:hover a {
+      color: rgba(239, 239, 239, 0.933);
+    }
+  }
+
+  .blogDiv {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    height: inherit;
+    grid-template-columns: repeat(1, 1fr);
+    .blogDivision {
+      width: 40vw;
+      margin: 0 auto;
+      height: 60vh;
+      margin-top: 1rem;
+      position: relative;
+      color: grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      img {
+        width: 45vw;
+        height: 35vh;
+      }
+      button {
+        text-align: center;
+        padding: 0.2rem 0.2rem;
+        margin: 0.2rem;
+        margin-top: 0.2rem;
+        border-radius: 0.3rem;
+        background-color: transparent;
+        font-weight: bold;
+        align-items: center;
+        border: 0.17rem solid black;
+        color: grey;
+        &:hover {
+          border: 0.17rem solid transparent;
+          background-color: grey;
+          color: rgb(233, 233, 233);
+        }
+      }
+      .viewMore:hover {
+        background-color: green;
+      }
+      .edit:hover {
+        background-color: rgba(4, 0, 255, 0.886);
+      }
+      .delete:hover {
+        background-color: red;
+      }
+      p,
+      h2,
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// !update block
+.UpdateBlock {
+  width: 100%;
+  height: 140vh;
+  position: absolute;
+  top: 0%;
+  z-index: 10;
+  .formBlock {
+    width: 70%;
+    height: 95vh;
+    margin: 0 auto;
+    background-color: rgb(67, 64, 64);
+    text-align: center;
+    border-radius: 1.4rem;
+    padding: 1.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(230, 230, 230);
+    transform: translate(-50%, -50%);
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0.4rem;
+      input,
+      textarea {
+        padding: 0.2rem 0.2rem;
+        width: 90%;
+        border-radius: 0.3rem;
+        border: 0.2rem solid transparent;
+        &:hover,
+        &:focus {
+          border: 0.2rem solid #949292;
+          outline: none;
+        }
+      }
+
+      label {
+        width: 90%;
+        padding: 0.2rem;
+        margin-top: 1rem;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      button {
+        padding: 0.4rem 1.2rem;
+        margin-top: 1.6rem;
+        border-radius: 0.2rem;
+        border: 0.2rem solid gray;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        &:hover {
+          border: 0.2rem solid transparent;
+          background-color: #000;
+          border-radius: 0.4rem;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.hidden {
+  display: none;
+}
+.cancel {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 100%;
+  background-color: grey;
+  border: 0.1rem solid transparent;
+  position: absolute;
+  top: 0rem;
+  right: -3rem;
+  img {
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0.1rem;
+  }
+}
+
+// !displayBlock
+.displayBlock {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  z-index: 10;
+  .display {
+    width: 70%;
+    height: 80vh;
+    margin: 0 auto;
+    background-color: rgb(67, 64, 64);
+    text-align: center;
+    border-radius: 1.4rem;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(230, 230, 230);
+    transform: translate(-50%, -50%);
+  }
+  h3,
+  h2,
+  h1 {
+    font-weight: 600;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+.hiddenBlock {
+  display: none;
+}
+.cancelBlock {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 100%;
+  background-color: grey;
+  border: 0.1rem solid transparent;
+  position: absolute;
+  top: 0rem;
+  right: -3rem;
+  img {
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0.1rem;
+  }
+}
 }

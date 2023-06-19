@@ -3,6 +3,7 @@
 
 .mainBlock {
   width: 100%;
+  // height: 150vh;
   display: flex;
   .sideBar {
     width: 20%;
@@ -87,7 +88,7 @@
     .renderDiv {
       width: 13vw;
       margin: 0 auto;
-      height: 15vh;
+      height: 20vh;
       background-color: rgba(220, 220, 220, 0.93);
       margin-bottom: 0rem;
       position: relative;
@@ -102,5 +103,126 @@
       text-align: center;
       font-size: 1rem;
     }
+    h6 {
+      text-align: center;
+      font-size: 1.4rem;
+    }
   }
+}
+
+
+
+@media screen and (max-width:475px) {
+  .mainBlock {
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  .sideBar {
+    width: 100%;
+    height: 50vh;
+    background-color: $dark2;
+    padding-top: 1rem;
+    div {
+      @include flexProp(none);
+      flex-direction: column;
+      img {
+        width: 4rem;
+        height: 4rem;
+        background-color: white;
+        border-radius: 100%;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        color: $dark4;
+        padding: 0.7rem 1rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 0.2rem solid;
+        font-size: 1.2rem;
+        font-weight: 600;
+        a {
+          color: rgb(205, 201, 201);
+          text-decoration: none;
+        }
+        &:hover{
+        border-bottom: 0.2rem solid rgb(4, 253, 41);
+        cursor: pointer;
+      }
+      }
+    }
+  }
+  .mainPage {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    width: 80%;
+    height: 60vh;
+    .homeBlock {
+      margin-top: 1rem;
+      .input11 {
+        position: relative;
+        top: -2rem;
+        left: 2.6rem;
+        input {
+          padding: 0.8rem 1rem;
+          width: 60%;
+          margin-bottom: -1rem;
+          background-color: $dark4;
+          border: 0.2rem solid transparent;
+          outline: none;
+          border-radius: 0.4rem;
+          &:focus,
+          &:hover {
+            border: 0.2rem solid $dark3;
+            outline: none;
+          }
+        }
+
+        .search {
+          position: absolute;
+          top: 1.7rem;
+          right: 3.5rem;
+          font-size: 1.8rem;
+          color: $dark2;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: $dark3;
+      }
+    }
+  }
+  .renderBlock {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    .renderDiv {
+      width: 20vw;
+      margin: 0 auto;
+      height: 20vh;
+      background-color: rgba(220, 220, 220, 0.93);
+      margin-bottom: 0rem;
+      position: relative;
+      color: grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 0.3rem;
+    }
+    h4 {
+      text-align: center;
+      font-size: 0.6rem;
+    }
+    h6 {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+}
 }

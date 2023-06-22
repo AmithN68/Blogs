@@ -23,6 +23,18 @@
       "bloggerName": "Anarghya",
       "blogDetail": "A Shopping cart with items",
       "id": 4
+    },
+    {
+      "blogName": "fashion",
+      "bloggerName": "Akhil",
+      "blogDetail": "fashion Blogger",
+      "id": 5
+    },
+    {
+      "blogName": "shoes",
+      "bloggerName": "shiva",
+      "blogDetail": "shoe blogger",
+      "id": 6
     }
   ]
 }

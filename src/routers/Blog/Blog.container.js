@@ -17,6 +17,7 @@ export class BlogContainer extends PureComponent {
       blogDetail: "",
       id: "",
       display: false,
+      toast:false,
     };
   }
   componentDidMount() {
@@ -66,7 +67,10 @@ export class BlogContainer extends PureComponent {
     const blogDetail = this.state.blogDetail;
     if (blogName === "" || bloggerName === "" || blogDetail === "") {
       if (this.state.editData === true) {
-        alert("Details cannot be empty");
+        this.setState({ toast: true });
+        setTimeout(() => {
+          this.setState({ toast: false });
+        }, 2500);
       }
     } else {
       this.UpdateData(id);
@@ -95,7 +99,10 @@ export class BlogContainer extends PureComponent {
           });
         }
         this.rendering();
-        alert("Blog Updated Successfully");
+        this.setState({ toast: true });
+        setTimeout(() => {
+          this.setState({ toast: false });
+        }, 2500);
       })
       .catch(e => {
         console.log(e.msg);
@@ -114,7 +121,10 @@ export class BlogContainer extends PureComponent {
     })
       .then(res => {
         this.rendering();
-        alert("Successfully Deleted");
+        this.setState({ toast: true });
+        setTimeout(() => {
+          this.setState({ toast: false });
+        }, 2500);
       })
 
       .catch(rej => console.log(rej));

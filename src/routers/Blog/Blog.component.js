@@ -3,6 +3,7 @@ import "./Blog.scss";
 import { Link } from "react-router-dom";
 import Pagination from "../../components/Pagination";
 import Cancel from "../../images/icons8-close.svg";
+import ToastContainer from "../../components/Toast/Toast.container";
 
 export class BlogComponent extends PureComponent {
   render() {
@@ -13,6 +14,7 @@ export class BlogComponent extends PureComponent {
       bloggerName,
       blogs,
       dis,
+      toast,
       handleDisplay,
       currentPage,
       postPerPage,
@@ -31,6 +33,7 @@ export class BlogComponent extends PureComponent {
     const totalPost = blogs.length;
     return (
       <div>
+        {toast && <ToastContainer />}
         <div className="blogBlock">
           <button className="homeBtn">
             <Link to="/">Home</Link>

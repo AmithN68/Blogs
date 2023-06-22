@@ -9,6 +9,7 @@ export class AddContainer extends PureComponent {
       blogName: "",
       bloggerName: "",
       blogDetail: "",
+      toast:false,
     };
   }
   handleChange = (e) => {
@@ -28,7 +29,11 @@ export class AddContainer extends PureComponent {
       .then(res => {
         console.log(res);
         if (res.ok) {
-          alert("Blog Added Successfully");
+
+          this.setState({ toast: true });
+          setTimeout(() => {
+            this.setState({ toast: false, })
+          }, 2500);
           this.setState({
             blogName: "",
             bloggerName: "",

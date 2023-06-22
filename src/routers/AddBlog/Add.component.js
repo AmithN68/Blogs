@@ -2,13 +2,15 @@ import React, { PureComponent } from "react";
 import "./Add.scss";
 import { Link } from "react-router-dom";
 import HomeSvg from "../../images/icons8-home.svg";
+import ToastContainer from "../../components/Toast/Toast.container";
 
 export class AddComponent extends PureComponent {
   render() {
-    const { handleSubmit, handleChange, blogName, bloggerName, blogDetail } =
+    const { handleSubmit, handleChange, blogName, bloggerName, blogDetail,toast } =
       this.props;
     return (
       <div className="addBlock">
+        {toast && <ToastContainer/>}
         <div className="formBlock">
           <Link to="/">
             <span className="material-symbols-outlined ">
@@ -24,6 +26,7 @@ export class AddComponent extends PureComponent {
               value={blogName}
               name="blogName"
               onChange={handleChange}
+              required
             />
             <label htmlFor="bloggerName">Blogger Name</label>
             <input
@@ -32,6 +35,7 @@ export class AddComponent extends PureComponent {
               name="bloggerName"
               value={bloggerName}
               onChange={handleChange}
+              required
             />
             <label htmlFor="blogDetail">Blog Details</label>
             <textarea
@@ -41,6 +45,7 @@ export class AddComponent extends PureComponent {
               rows="4"
               value={blogDetail}
               onChange={handleChange}
+              required
             ></textarea>
             <button>ADD</button>
           </form>

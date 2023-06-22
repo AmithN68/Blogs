@@ -7,6 +7,7 @@ export class HomeContainer extends PureComponent {
 
     this.state = {
       blogs: [],
+      searchValue:""
     };
   }
 
@@ -24,10 +25,14 @@ export class HomeContainer extends PureComponent {
       .then(res => this.setState({ blogs: res }))
       .catch(rej => console.log(rej));
   }
+  handleChange = (e) => {
+    this.setState({searchValue:e.target.value})
+  }
   render() {
     return (
       <div>
-        <HomeComponent {...this.state} />
+        <HomeComponent {...this.state}
+          handleChange={this.handleChange} />
       </div>
     );
   }

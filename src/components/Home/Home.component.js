@@ -2,12 +2,10 @@ import React, { PureComponent } from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
 import searchBlog from "../../images/icons8-search.svg";
-// import "BlogPage" from "../../routers/Blog/Blog.container";
 
 export class HomeComponent extends PureComponent {
   render() {
-    const { blogs } =
-      this.props;
+    const { blogs, handleChange, searchValue } = this.props;
     return (
       <div className="mainBlock">
         <div className="sideBar">
@@ -32,23 +30,37 @@ export class HomeComponent extends PureComponent {
                 type="text"
                 name="searchValue"
                 id="searchValue"
+                onChange={handleChange}
+                placeholder="Search..."
               />
-              <img
-                src={searchBlog}
-                alt=""
-                className="search"
-              />
+              <img src={searchBlog} alt="" className="search" />
             </span>
             <div className="renderBlock">
-              {blogs.map((val, ind) => {
-                return (
-                  <div className="renderDiv" key={ind}>
-                    <h4>{ind + 1}</h4>
-                    <h6>{val.blogName}</h6>
-                    <h4>{val.bloggerName}</h4>
-                  </div>
-                );
-              })}
+              {blogs
+                .filter(val => {
+                  if (searchValue == "") {
+                    return val;
+                  } else if (
+                    val.blogName
+                      .toLowerCase()
+                      .includes(searchValue.toLowerCase()) ||
+                    val.bloggerName
+                      .toLowerCase()
+                      .includes(searchValue.toLowerCase()) ||
+                    val.id == searchValue
+                  ) {
+                    return val;
+                  }
+                })
+                .map((val, ind) => {
+                  return (
+                    <div className="renderDiv" key={ind}>
+                      <h4>{val.id}</h4>
+                      <h6>{val.blogName}</h6>
+                      <h4>{val.bloggerName}</h4>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>

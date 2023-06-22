@@ -6,7 +6,6 @@ export class ToastContainer extends PureComponent {
     return (
       <div>
             <div id="snackbar">Success</div>
-            
       </div>
     );
   }

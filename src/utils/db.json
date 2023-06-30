@@ -3,38 +3,26 @@
     {
       "blogName": "Food",
       "bloggerName": "Amith",
-      "blogDetail": "Foodie Blogger\n",
+      "blogDetail": "Foodie Blogger",
       "id": 1
     },
     {
       "blogName": "Food",
       "bloggerName": "Chandu",
-      "blogDetail": "Foodie Blogger in Bangalore",
+      "blogDetail": "Foodie",
       "id": 2
     },
     {
-      "blogName": "Shopping",
+      "blogName": "Fashion",
       "bloggerName": "Charan",
-      "blogDetail": "Shopping Blogger",
+      "blogDetail": "fashion blogger",
       "id": 3
     },
     {
-      "blogName": "Shopping",
-      "bloggerName": "Anarghya",
-      "blogDetail": "A Shopping cart with items",
+      "blogName": "Food",
+      "bloggerName": "Charan",
+      "blogDetail": "dsdasdas",
       "id": 4
-    },
-    {
-      "blogName": "fashion",
-      "bloggerName": "Akhil",
-      "blogDetail": "fashion Blogger",
-      "id": 5
-    },
-    {
-      "blogName": "shoes",
-      "bloggerName": "shiva",
-      "blogDetail": "shoe blogger",
-      "id": 6
     }
   ]
 }

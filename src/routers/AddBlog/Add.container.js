@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import AddComponent from "./Add.component";
+import { withRouter } from '../WithRoute/index';
 
-export class AddContainer extends PureComponent {
+ class AddContainer extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -9,15 +10,15 @@ export class AddContainer extends PureComponent {
       blogName: "",
       bloggerName: "",
       blogDetail: "",
-      toast:false,
+      toast: false,
     };
   }
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     console.log(e);
     const { blogName, bloggerName, blogDetail } = this.state;
@@ -29,16 +30,17 @@ export class AddContainer extends PureComponent {
       .then(res => {
         console.log(res);
         if (res.ok) {
-
           this.setState({ toast: true });
           setTimeout(() => {
-            this.setState({ toast: false, })
+            this.setState({ toast: false });
           }, 2500);
+
           this.setState({
             blogName: "",
             bloggerName: "",
-            blogDetail: ""
+            blogDetail: "",
           });
+          this.props.navigate("/");
         } else {
           throw new Error("unSuccess");
         }
@@ -61,4 +63,4 @@ export class AddContainer extends PureComponent {
   }
 }
 
-export default AddContainer;
+export default withRouter(AddContainer);

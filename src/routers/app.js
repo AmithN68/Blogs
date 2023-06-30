@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Home from "../components/Home";
 import Blog from "./Blog";
+// import { withRouter } from "./WithRoute";
 import Add from "./AddBlog";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 

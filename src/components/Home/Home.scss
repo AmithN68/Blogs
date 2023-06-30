@@ -3,38 +3,44 @@
 
 .mainBlock {
   width: 100%;
-  // height: 150vh;
+  // height: 100%;
   display: flex;
   .sideBar {
-    width: 20%;
+    width: 14%;
     height: 100vh;
-    background-color: $dark2;
-    padding-top: 4rem;
+    background-color: black;
+    padding-top: 1rem;
     div {
       @include flexProp(none);
       flex-direction: column;
-      img {
-        width: 9rem;
-        height: 9rem;
-        background-color: white;
-        border-radius: 100%;
-        margin-bottom: 2.8rem;
+      h1 {
+        color: white;
+        margin-bottom: 2rem;
+        padding: 1rem 1.4rem;
+        border-bottom: 0.2rem solid grey;
       }
       h2 {
-        color: $dark4;
-        padding: 0.7rem 1rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 0.2rem solid;
-        font-size: 1.45rem;
-        font-weight: 600;
+        margin-top: 0.6rem;
+        padding: 0.8rem 0rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        width: 100%;
         a {
-          color: white;
+          color: grey;
+          padding: 1rem 4.1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
           text-decoration: none;
+          &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: grey;
+          }
         }
-        &:hover{
-        border-bottom: 0.2rem solid rgb(4, 253, 41);
-        cursor: pointer;
       }
+      .first {
+        padding: 1rem 4.34rem;
       }
     }
   }
@@ -42,34 +48,26 @@
     text-align: center;
     font-size: 3rem;
     font-weight: 600;
-    width: 80%;
+    width: 86%;
+    height: 100vh;
     .homeBlock {
-      margin-top: 2rem;
       .input11 {
-        position: relative;
+        height: 11.4vh;
+        background-color: black;
+        width: 100%;
         input {
-          padding: 0.8rem 1rem;
-          width: 30%;
-          margin: 3rem;
-          background-color: $dark4;
+          padding: 0.6rem 1rem;
+          width: 26%;
+          margin: 1rem;
+          background-color: $dark5;
           border: 0.2rem solid transparent;
           outline: none;
-          border-radius: 0.4rem;
+          border-radius: 1.4rem;
           &:focus,
           &:hover {
             border: 0.2rem solid $dark3;
             outline: none;
           }
-        }
-
-        .search {
-          position: absolute;
-          top: 1.7rem;
-          right: 3.5rem;
-          font-size: 1.8rem;
-          color: $dark2;
-          font-weight: 700;
-          cursor: pointer;
         }
       }
       h2 {
@@ -80,19 +78,29 @@
     }
   }
   .renderBlock {
-    width: 92%;
+    width: 95%;
+    height: 83vh;
     margin: 0 auto;
+    margin-top: 1.2rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+    .message {
+      font-size: 3.2rem;
+      color: grey;
+      position: absolute;
+      top: 30%;
+      left: 45.4%;
+      // transform: translate(-50%, -50%);
+    }
     .renderDiv {
-      width: 13vw;
+      width: 14vw;
       margin: 0 auto;
-      height: 20vh;
-      background-color: rgba(220, 220, 220, 0.93);
+      height: 18vh;
+      background-color: rgba(239, 239, 239, 0.618);
       margin-bottom: 0rem;
       position: relative;
-      color: grey;
+      color: rgb(116, 116, 116);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -110,119 +118,138 @@
   }
 }
 
-
-
-@media screen and (max-width:475px) {
+//!media queries
+@media screen and (max-width: 470px) {
   .mainBlock {
-  width: 100%;
-  height: 150vh;
-  display: flex;
-  flex-direction: column;
-  .sideBar {
     width: 100%;
-    height: 50vh;
-    background-color: $dark2;
-    padding-top: 1rem;
-    div {
-      @include flexProp(none);
-      flex-direction: column;
-      img {
-        width: 4rem;
-        height: 4rem;
-        background-color: white;
-        border-radius: 100%;
-        margin-bottom: 1rem;
-      }
-      h2 {
-        color: $dark4;
-        padding: 0.7rem 1rem;
-        margin-bottom: 0.5rem;
-        border-bottom: 0.2rem solid;
-        font-size: 1.2rem;
-        font-weight: 600;
-        a {
-          color: rgb(205, 201, 201);
-          text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .sideBar {
+      width: 100%;
+      height: 20%;
+      background-color: black;
+      padding-top: 0.5rem;
+      padding-bottom: 9px;
+      div {
+        @include flexProp(none);
+        flex-direction: column;
+        h1 {
+          color: white;
+          margin-bottom: 0.4rem;
+          padding: 0.2rem 0.4rem;
+          border-bottom: 0.2rem solid grey;
         }
-        &:hover{
-        border-bottom: 0.2rem solid rgb(4, 253, 41);
-        cursor: pointer;
-      }
-      }
-    }
-  }
-  .mainPage {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 600;
-    width: 80%;
-    height: 60vh;
-    .homeBlock {
-      margin-top: 1rem;
-      .input11 {
-        position: relative;
-        top: -2rem;
-        left: 2.6rem;
-        input {
-          padding: 0.8rem 1rem;
-          width: 60%;
-          margin-bottom: -1rem;
-          background-color: $dark4;
-          border: 0.2rem solid transparent;
-          outline: none;
-          border-radius: 0.4rem;
-          &:focus,
-          &:hover {
-            border: 0.2rem solid $dark3;
-            outline: none;
+        h2 {
+          margin-top: 0.1rem;
+          padding: 0.1rem 0rem;
+          width: 100%;
+          // text-align: center;
+          margin-bottom: 0.3rem;
+          a {
+            color: grey;
+            padding: 0.8rem 3rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            &:hover {
+              cursor: pointer;
+              color: white;
+              background-color: grey;
+            }
           }
         }
-
-        .search {
-          position: absolute;
-          top: 1.7rem;
-          right: 3.5rem;
-          font-size: 1.8rem;
-          color: $dark2;
-          font-weight: 700;
-          cursor: pointer;
+        .first {
+          padding: 1rem 3.2rem;
         }
       }
-      h2 {
-        font-size: 3rem;
-        font-weight: 700;
-        color: $dark3;
+    }
+    .mainPage {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 600;
+      width: 100%;
+      height: 80%;
+      .homeBlock {
+        .input11 {
+          height: 11vh;
+          background-color: black;
+          width: 100%;
+          input {
+            padding: 0.4rem 1rem;
+            width: 40%;
+            // margin: 0rem;
+            background-color: $dark5;
+            border: 0.2rem solid transparent;
+            outline: none;
+            border-radius: 1.4rem;
+            &:focus,
+            &:hover {
+              border: 0.2rem solid $dark3;
+              outline: none;
+            }
+          }
+        }
+        h2 {
+          font-size: 3rem;
+          font-weight: 700;
+          color: $dark3;
+        }
       }
     }
-  }
-  .renderBlock {
-    width: 60%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    .renderDiv {
-      width: 20vw;
+    .renderBlock {
+      width: 95%;
+      height: 100vh;
       margin: 0 auto;
-      height: 20vh;
-      background-color: rgba(220, 220, 220, 0.93);
-      margin-bottom: 0rem;
-      position: relative;
-      color: grey;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      border-radius: 0.3rem;
-    }
-    h4 {
-      text-align: center;
-      font-size: 0.6rem;
-    }
-    h6 {
-      text-align: center;
-      font-size: 0.8rem;
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      .message {
+        font-size: 2rem;
+        color: grey;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .renderDiv {
+        width: 30vw;
+        margin: 0 auto;
+        height: 20vh;
+        background-color: rgba(239, 239, 239, 0.618);
+        // margin-bottom: -2rem;
+        position: relative;
+        color: rgb(116, 116, 116);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 0.3rem;
+      }
+      h4 {
+        text-align: center;
+        font-size: 1rem;
+      }
+      h6 {
+        text-align: center;
+        font-size: 1.4rem;
+      }
     }
   }
 }
+@media (max-width: 1250px) {
+  .mainBlock .renderBlock {
+    height: 92vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 20px 228px 20px;
+  }
+  .sideBar {
+    padding-top: 0.5rem;
+    padding-bottom: 9px;
+  }
 }

@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import BlogComponent from "./Blog.component";
 import axios from "axios";
+import data from "../../utils/db.json";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 export class BlogContainer extends PureComponent {
   constructor(props) {
@@ -17,7 +19,8 @@ export class BlogContainer extends PureComponent {
       blogDetail: "",
       id: "",
       display: false,
-      toast:false,
+      toast: false,
+      nPage: [],
     };
   }
   componentDidMount() {
@@ -31,13 +34,21 @@ export class BlogContainer extends PureComponent {
         }
         throw "rejected";
       })
-      .then(res => this.setState({ blogs: res }))
+      .then(res => {
+        this.setState({ blogs: res });
+        const demo = Math.ceil(res.length / this.state.postPerPage);
+        console.log(demo);
+        this.setState({
+          nPage: demo,
+        });
+      })
       .catch(rej => console.log(rej));
   }
 
   handleClick = pageNumber => {
-    const data = pageNumber.target.id;
-    this.setState({ currentPage: JSON.parse(data) });
+    // const data = pageNumber.target.id;
+    // this.setState({ currentPage: JSON.parse(data) });
+    this.setState({ currentPage: pageNumber });
   };
   handleEdit = id => {
     const dat = JSON.parse(id);
@@ -140,6 +151,23 @@ export class BlogContainer extends PureComponent {
       })
       .catch(rej => console.log(rej));
   };
+
+  prePage = () => {
+    const { currentPage } = this.state;
+    if (currentPage > 1) {
+      this.setState({ currentPage: currentPage - 1 });
+    }
+  };
+  nextPage = () => {
+    const { currentPage, nPage } = this.state;
+    if (currentPage < nPage) {
+      this.setState({ currentPage: currentPage + 1 });
+    }
+  };
+  curPage = id => {
+    this.setState({ currentPage: id });
+  };
+
   handle = {
     handleClick: this.handleClick.bind(this),
     handleDelete: this.handleDelete.bind(this),
@@ -148,11 +176,30 @@ export class BlogContainer extends PureComponent {
     handleChange: this.handleChange.bind(this),
     handleExit: this.handleExit.bind(this),
     handleDisplay: this.handleDisplay.bind(this),
+    prePage: this.prePage.bind(this),
+    nextPage: this.nextPage.bind(this),
+    curPage: this.curPage.bind(this),
   };
   render() {
+    const { blogs, currentPage, postPerPage } = this.state;
+    const lastPost = currentPage * postPerPage;
+    const firstPost = lastPost - postPerPage;
+    console.log(firstPost, lastPost);
+    const currentPosts = blogs.slice(firstPost, lastPost);
+    //  const nPage = Math.ceil(data.length / this.state.postPerPage);
+    const num = [...Array(this.state.nPage + 1).keys()].slice(1);
+    console.log(currentPosts);
     return (
       <div>
-        <BlogComponent {...this.state} {...this.handle} />
+        <BlogComponent
+          {...this.state}
+          {...this.handle}
+          lastPost={lastPost}
+          firstPost={firstPost}
+          currentPosts={currentPosts}
+          num={num}
+          nPage={this.state.nPage}
+        />
       </div>
     );
   }

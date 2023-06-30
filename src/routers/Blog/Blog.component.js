@@ -8,6 +8,9 @@ import ToastContainer from "../../components/Toast/Toast.container";
 export class BlogComponent extends PureComponent {
   render() {
     const {
+      prePage,
+      nextPage,
+      num,
       display,
       blogDetail,
       blogName,
@@ -17,20 +20,17 @@ export class BlogComponent extends PureComponent {
       toast,
       handleDisplay,
       currentPage,
-      postPerPage,
-      handleClick,
       handleDelete,
       handleUpdate,
       handleEdit,
       handleChange,
       handleExit,
+      currentPosts,
       edit,
+      curPage,
     } = this.props;
-    console.log(dis);
-    const lastPost = currentPage * postPerPage;
-    const firstPost = lastPost - postPerPage;
-    const currentPost = blogs.slice(firstPost, lastPost);
-    const totalPost = blogs.length;
+    console.log(currentPage);
+
     return (
       <div>
         {toast && <ToastContainer />}
@@ -39,7 +39,7 @@ export class BlogComponent extends PureComponent {
             <Link to="/">Home</Link>
           </button>
           <div className="blogDiv">
-            {currentPost.map((val, ind) => (
+            {currentPosts.map((val, ind) => (
               <div key={ind} className="blogDivision">
                 <img
                   src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGJsb2d8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
@@ -47,8 +47,8 @@ export class BlogComponent extends PureComponent {
                 />
                 <h2>{val.blogName}</h2>
                 <h3>{val.bloggerName}</h3>
-                <p>{val.blogDetail}</p>
-                <div>
+                <p className="details">{val.blogDetail}</p>
+                <div className="btnBlock">
                   <button
                     className="edit"
                     value={val.id}
@@ -78,13 +78,17 @@ export class BlogComponent extends PureComponent {
               </div>
             ))}
           </div>
-          <Pagination
-            handleClick={handleClick}
-            blogs={blogs}
-            currentPage={currentPost}
-            blogPerPage={postPerPage}
-            totalBlog={totalPost}
-          />
+          <nav className="paginationBlock">
+            <ul className="pagination">
+              <li>
+                <p onClick={prePage}>Previous</p>
+              </li>
+              <li><p className="currPage">{currentPage}</p></li>
+              <li>
+                <p onClick={nextPage}>Next</p>
+              </li>
+            </ul>
+          </nav>
         </div>
         <div className={edit ? "UpdateBlock" : "hidden"}>
           <div className="formBlock">
@@ -99,6 +103,7 @@ export class BlogComponent extends PureComponent {
                 id="blogName"
                 value={blogName}
                 name="blogName"
+                required
                 onChange={handleChange}
               />
               <label htmlFor="bloggerName">Blogger Name</label>
@@ -107,6 +112,7 @@ export class BlogComponent extends PureComponent {
                 id="bloggerName"
                 name="bloggerName"
                 value={bloggerName}
+                required
                 onChange={handleChange}
               />
               <label htmlFor="blogDetail">Blog Details</label>
@@ -116,6 +122,7 @@ export class BlogComponent extends PureComponent {
                 cols="30"
                 rows="4"
                 value={blogDetail}
+                required
                 onChange={handleChange}
               ></textarea>
               <button type="submit">UPDATE</button>
